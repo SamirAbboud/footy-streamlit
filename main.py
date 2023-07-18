@@ -58,7 +58,7 @@ with st.sidebar:
     st.markdown('<h1 style="font-family: Consolas; font-size: 34px;">Select Player Here ...</h1>', unsafe_allow_html=True)
     options = df["Player"].dropna().tolist()
     #np.random.shuffle(options)
-    player = st.selectbox('Player', options)
+    player = st.selectbox('Player', options, index=979)
 
     #print(player)
 
