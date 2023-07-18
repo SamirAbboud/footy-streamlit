@@ -69,25 +69,24 @@ player_stats = df.loc[(df['Player'] == player)].reset_index()
 position = player_stats['Position'][0]
 
 metrics = []
-match position:
-    case 'Winger':
-        metrics = winger_metrics
 
-    case 'Full-Back':
-        metrics = fullback_metrics
-    
-    case 'Central Midfielder':
-        metrics = central_midfielder_metrics
+if(position == 'Winger'):
+    metrics = winger_metrics
 
-    case 'Attacking Midfielder':
-        metrics = attacking_midfielder_metrics
+elif (position == 'Full-Back'):
+    metrics = fullback_metrics
 
-    case 'Centre-Forward':
-        metrics = centre_forward_metrics
+elif (position == 'Central Midfielder'):
+    metrics = central_midfielder_metrics
 
-    case 'Centre-Back':
-        metrics = centre_back_metrics
+elif (position == 'Attacking Midfielder'):
+    metrics = attacking_midfielder_metrics
 
+elif (position == 'Centre-Forward'):
+    metrics = centre_forward_metrics
+
+elif (position == 'Centre-Back'):
+    metrics = centre_back_metrics
     
 df = df.loc[(df['Position'] == position)]
 df = df.filter(items=metrics).reset_index()
