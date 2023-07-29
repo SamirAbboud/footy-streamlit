@@ -12,13 +12,22 @@ import math
 import warnings
 
 
-
 hide_github_icon = """
 <style>
-.css-1wbqy5l.ejj6ze1 { display: none; } 
+.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137, .viewerBadge_text__1JaDK{ display: none; } #MainMenu{ visibility: hidden; } footer { visibility: hidden; } header { visibility: hidden; }
 </style>
 """
 st.markdown(hide_github_icon,unsafe_allow_html=True)
+
+st.markdown("""
+        <style>
+               .block-container {
+                    padding-top: 0rem;
+                    padding-bottom: 0rem;
+                    padding-right: 1rem;
+                }
+        </style>
+        """, unsafe_allow_html=True)
 
 #Remove Warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
@@ -62,7 +71,7 @@ with st.sidebar:
 
     #print(player)
 
-    st.markdown('<h1 style="font-family: Consolas; font-size: 34px;">And Let The Magic Happen 🠚</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="font-family: Consolas; font-size: 34px;">And Let The Magic Happen ➡️</h1>', unsafe_allow_html=True)
 
 
 player_stats = df.loc[(df['Player'] == player)].reset_index()
