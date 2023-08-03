@@ -43,7 +43,7 @@ attacking_midfielder_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played',
 central_midfielder_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played', 'Goals & Assists', 'Passes into PA', 'Passes into Final 1/3', 'Key Passes', 'Prog Carries', 'Final 1/3 Carries', 'Att Pen Touches', 'Prog Passes', 'Recoveries', 'Clearances', 'Tkl+Int', 'Interceptions', 'Tackles', 'Tkls Won', 'Aerial Won', 'Passes Completed', 'Passes Received']
 fullback_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played', 'Tackles', 'Tkls Won', 'Blocks', 'Interceptions', 'Tkl+Int', 'Clearances', 'Recoveries', 'Prog Passes', 'Passes Completed', 'Prog Carries', 'Aerial Won', 'Crosses', 'xA', 'Key Passes']
 centre_forward_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played', 'Goals & Assists', 'Goals', 'Shots on Target', 'Goals per SOT', 'xG', 'npxG', 'Assists', 'xA', 'Att Pen Touches', 'Aerial Won', 'Passes Completed', 'Passes Received', 'Passes into PA']
-centre_back_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played', 'Tackles', 'Tkls Won', 'Blocks', 'Recoveries', 'Interceptions', 'Tkl+Int', 'Clearances', 'Aerial Won', 'Aerial Lost', 'Passes Completed', 'Passes Received', 'Prog Passes', 'Prog Carries', 'Through Balls', 'Passes into Final 1/3']
+centre_back_metrics = ['Player', 'Squad', 'True Age', 'Minutes Played', 'Tackles', 'Tkls Won', 'Blocks', 'Recoveries', 'Interceptions', 'Aerial Won', 'Aerial Lost', 'Succ. Dribbles %', 'Passes Completed', 'Pass Completion %', 'Passes Received', 'Prog Passes', 'Prog Carries', 'Through Balls', 'Passes into Final 1/3']
 
 # Read The Data
 df = pd.read_csv("./resources/data-top-seven.csv")
@@ -53,7 +53,8 @@ df = df.loc[~(df['Position'] == 'Goalkeeper')]
 df.rename(columns = {
     'Tackles Won Possession': 'Tkls Won', 
     'Passes into Penalty Area': 'Passes into PA', 
-    'Successful Dribbles': 'Succ. Dribbles', 
+    'Successful Dribbles': 'Succ. Dribbles',
+    'Successful Dribbles %': 'Succ. Dribbles %',
     'Passes into Final Third': 'Passes into Final 1/3',
     'Final Third Carries': 'Final 1/3 Carries',
     'Goals per Shot on Target': 'Goals per SOT',
